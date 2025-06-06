@@ -9,41 +9,39 @@ No necesitas instalar Java ni MySQL manualmente.
 
 1. Crea una carpeta vacía en tu computadora.
 2. Dentro de esa carpeta, crea un archivo llamado `docker-compose.yml` con este contenido:
+
    
 version: "3.8"
+
 services:
- db:
- image: mysql:8
- container_name: mysql-lealtad
- environment:
- MYSQL_ROOT_PASSWORD: root
- MYSQL_DATABASE: programalealtad
- ports:
- - "3306:3306"
- volumes:
- - mysql_data:/var/lib/mysql
- networks:
- - appnet
- backend:
- image: gustavogm772/programa-lealtad
-Guía de Implementación - Aplicativo de Programa de Lealtad TConecta
- container_name: programa-lealtad
- ports:
- - "8080:8080"
- depends_on:
- - db
- networks:
- - appnet
- environment:
- SPRING_DATASOURCE_URL:
-jdbc:mysql://db:3306/programalealtad?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
- SPRING_DATASOURCE_USERNAME: root
- SPRING_DATASOURCE_PASSWORD: root
- JWT_SECRET: T9YpN3vUeXz6mCkR7qL2bVtA8sDfJwGh
-networks:
- appnet:
-volumes:
- mysql_data:
+  db:
+    image: mysql:8
+    container_name: mysql-lealtad
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: programalealtad
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql 
+    networks:
+      - appnet
+
+  backend:
+    image: gustavogm772/programa-lealtad
+    container_name: programa-lealtad
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - appnet
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/programalealtad?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      JWT_SECRET: T9YpN3vUeXz6mCkR7qL2bVtA8sDfJwGh
+      
 
 3. Abre una terminal en esa carpeta y ejecuta:
  docker-compose up
