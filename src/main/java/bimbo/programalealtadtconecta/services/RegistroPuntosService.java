@@ -5,6 +5,7 @@ import bimbo.programalealtadtconecta.models.Usuario;
 import bimbo.programalealtadtconecta.repositories.RegistroPuntosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class RegistroPuntosService {
     @Autowired
     private RegistroPuntosRepository registroPuntosRepository;
 
+    @Transactional
     public RegistroPuntos registrarPuntos(RegistroPuntos registro) {
         return registroPuntosRepository.save(registro);
     }

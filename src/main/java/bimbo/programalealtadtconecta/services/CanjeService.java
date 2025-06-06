@@ -5,6 +5,7 @@ import bimbo.programalealtadtconecta.models.Usuario;
 import bimbo.programalealtadtconecta.repositories.CanjeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class CanjeService {
     @Autowired
     private CanjeRepository canjeRepository;
 
+    @Transactional
     public Canje registrarCanje(Canje canje) {
         return canjeRepository.save(canje);
     }

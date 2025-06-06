@@ -1,12 +1,12 @@
 package bimbo.programalealtadtconecta.services;
 
 import bimbo.programalealtadtconecta.models.Usuario;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import bimbo.programalealtadtconecta.repositories.UsuarioRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 
 import java.util.Optional;
 
@@ -18,6 +18,7 @@ public class UsuarioService {
 
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+    @Transactional
     public Usuario registrarUsuario(Usuario usuario) {
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         return usuarioRepository.save(usuario);
