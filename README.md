@@ -3,6 +3,8 @@
 Para poder ejecutar este proyecto, necesitas tener instalado:
 - Docker
 - Docker Compose
+- Cliente para probar APIs como Postman o hoppscotch
+  
 No necesitas instalar Java ni MySQL manualmente.
 
 ###Opción 1: Usar imagen desde Docker Hub (recomendado)
@@ -80,7 +82,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  ```yaml
  docker-compose up --build
 ```
-###Flujo para probar la aplicación
+###Flujo para probar la aplicación en Postman o hoppscotch
 
 1. Registra un usuario
  POST http://localhost:8080/api/usuarios/registrar
