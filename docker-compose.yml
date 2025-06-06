@@ -9,6 +9,8 @@ services:
       MYSQL_DATABASE: programalealtad
     ports:
       - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql 
     networks:
       - appnet
 
@@ -29,3 +31,6 @@ services:
 
 networks:
   appnet:
+
+volumes:
+  mysql_data:  
