@@ -53,7 +53,9 @@ volumes:
       
 
 3. Abre una terminal en esa carpeta y ejecuta:
+```yaml
  docker-compose up
+ ```
 Esto descargará la base de datos y la aplicación ya construida.
 
 ###Opción 2: Compilar desde el código fuente (opcional)
