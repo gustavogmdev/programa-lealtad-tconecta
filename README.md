@@ -83,7 +83,9 @@ Esto descargará la base de datos y la aplicación ya construida.
 
 1. Registra un usuario
  POST http://localhost:8080/api/usuarios/registrar
+
  Body JSON:
+ 
 ```yaml 
  {
  "username": "Alfredo",
@@ -92,7 +94,9 @@ Esto descargará la base de datos y la aplicación ya construida.
 ```
 2. Inicia sesión
  POST http://localhost:8080/api/auth/login
+
  Body JSON:
+ 
  ```yaml
  {
  "username": "Alfredo",
@@ -115,8 +119,11 @@ Esto descargará la base de datos y la aplicación ya construida.
  ```
 5. Registra puntos:
  POST http://localhost:8080/api/puntos/registrar
+
  Headers: Authorization: Bearer <token>
+ 
  Body JSON:
+ 
  ```yaml
  {
  "accionId": 1
@@ -124,13 +131,19 @@ Esto descargará la base de datos y la aplicación ya construida.
 ```
 6. Consulta tu saldo:
  GET http://localhost:8080/api/usuarios/saldo
+
  Headers: Authorization: Bearer <token>
-7. Canjea una recompensa:
+ 
+8. Canjea una recompensa:
  POST http://localhost:8080/api/canjes?recompensaId=1
+
  Headers: Authorization: Bearer <token>
-8. Consulta tus canjes:
+ 
+10. Consulta tus canjes:
  GET http://localhost:8080/api/canjes/mios
+
  Headers: Authorization: Bearer <token>
+ 
 Notas:
 
 - Asegúrate de que todos los endpoints protegidos tengan el header:
