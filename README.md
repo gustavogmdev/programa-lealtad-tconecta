@@ -71,6 +71,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  git clone https://github.com/gustavogmdev/programa-lealtad-tconecta
 ```
 2. Abre la terminal en la carpeta `programa-lealtad-tconecta`.
+
 3. Ejecuta:
 ```yaml 
  mvn clean package
@@ -104,6 +105,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  }
  ```
  Guarda el token que obtengas.
+
 3. Agrega acciones (como administrador o desde base de datos):
  ```yaml
  INSERT INTO accion (nombre, puntos) VALUES ('Registro', 100);
@@ -119,9 +121,9 @@ Esto descargará la base de datos y la aplicación ya construida.
  ```
 5. Registra puntos:
  POST http://localhost:8080/api/puntos/registrar
-
+```yaml
  Headers: Authorization: Bearer <token>
- 
+ ```
  Body JSON:
  
  ```yaml
@@ -131,19 +133,19 @@ Esto descargará la base de datos y la aplicación ya construida.
 ```
 6. Consulta tu saldo:
  GET http://localhost:8080/api/usuarios/saldo
-
+```yaml
  Headers: Authorization: Bearer <token>
- 
+ ```
 8. Canjea una recompensa:
  POST http://localhost:8080/api/canjes?recompensaId=1
-
+```yaml
  Headers: Authorization: Bearer <token>
- 
+ ```
 10. Consulta tus canjes:
  GET http://localhost:8080/api/canjes/mios
-
+```yaml
  Headers: Authorization: Bearer <token>
- 
+ ```
 Notas:
 
 - Asegúrate de que todos los endpoints protegidos tengan el header:
