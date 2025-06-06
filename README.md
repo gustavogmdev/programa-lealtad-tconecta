@@ -11,6 +11,7 @@ No necesitas instalar Java ni MySQL manualmente.
 2. Dentro de esa carpeta, crea un archivo llamado `docker-compose.yml` con este contenido:
 
    
+```yaml
 version: "3.8"
 
 services:
@@ -41,6 +42,14 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
       JWT_SECRET: T9YpN3vUeXz6mCkR7qL2bVtA8sDfJwGh
+
+networks:
+  appnet:
+
+volumes:
+  mysql_data:
+
+```
       
 
 3. Abre una terminal en esa carpeta y ejecuta:
