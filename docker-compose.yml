@@ -10,9 +10,14 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - mysql_data:/var/lib/mysql 
+      - mysql_data:/var/lib/mysql
     networks:
       - appnet
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   backend:
     build: .
@@ -20,7 +25,8 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - appnet
     environment:
@@ -28,9 +34,11 @@ services:
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
       JWT_SECRET: T9YpN3vUeXz6mCkR7qL2bVtA8sDfJwGh
+    restart: on-failure
 
 networks:
   appnet:
 
 volumes:
-  mysql_data:  
+  mysql_data:
+
