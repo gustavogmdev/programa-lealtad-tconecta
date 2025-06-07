@@ -1,4 +1,4 @@
-###Requisitos previos
+# Requisitos previos
    
 Para poder ejecutar este proyecto, necesitas tener instalado:
 - Docker
@@ -7,7 +7,7 @@ Para poder ejecutar este proyecto, necesitas tener instalado:
   
 No necesitas instalar Java ni MySQL manualmente.
 
-###Opción 1: Usar imagen desde Docker Hub (recomendado)
+# Opción 1: Usar imagen desde Docker Hub (recomendado)
 
 1. Crea una carpeta vacía en tu computadora.
 2. Dentro de esa carpeta, crea un archivo llamado `docker-compose.yml` con este contenido:
@@ -66,7 +66,7 @@ volumes:
  ```
 Esto descargará la base de datos y la aplicación ya construida.
 
-###Opción 2: Compilar desde el código fuente (opcional)
+# Opción 2: Compilar desde el código fuente (opcional)
 
 1. Clona el repositorio desde GitHub:
  ```yaml
@@ -82,7 +82,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  ```yaml
  docker-compose up --build
 ```
-###Flujo para probar la aplicación en Postman o hoppscotch
+# Flujo para probar la aplicación en Postman o hoppscotch
 
 1. Registra un usuario
  POST http://localhost:8080/api/usuarios/registrar
@@ -148,7 +148,7 @@ Esto descargará la base de datos y la aplicación ya construida.
 ```yaml
  Headers: Authorization: Bearer <token>
  ```
-Notas:
+# Notas:
 
 - Asegúrate de que todos los endpoints protegidos tengan el header:
  Authorization: Bearer <tu_token>
