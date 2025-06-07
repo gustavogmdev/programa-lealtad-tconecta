@@ -140,7 +140,6 @@ Esto descargará la base de datos y la aplicación ya construida.
  Headers: Authorization: Bearer <token>
  ```
 7. Ver recompensas disponibles
-
 GET http://localhost:8080/api/recompensas
 ```yaml
  Headers: Authorization: Bearer <token>
