@@ -4,6 +4,7 @@ Para poder ejecutar este proyecto, necesitas tener instalado:
 - Docker
 - Docker Compose
 - Cliente para probar APIs como Postman o hoppscotch
+- Cliente MySQL para agregar acciones(compras que dan puntos) y recompensas
   
 No necesitas instalar Java ni MySQL manualmente.
 
@@ -138,12 +139,18 @@ Esto descargará la base de datos y la aplicación ya construida.
 ```yaml
  Headers: Authorization: Bearer <token>
  ```
+7. Ver recompensas disponibles
+
+GET http://localhost:8080/api/recompensas
+```yaml
+ Headers: Authorization: Bearer <token>
+ ```
 8. Canjea una recompensa:
  POST http://localhost:8080/api/canjes?recompensaId=1
 ```yaml
  Headers: Authorization: Bearer <token>
  ```
-10. Consulta tus canjes:
+9. Consulta tus canjes:
  GET http://localhost:8080/api/canjes/mios
 ```yaml
  Headers: Authorization: Bearer <token>
