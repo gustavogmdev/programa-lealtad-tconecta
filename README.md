@@ -92,7 +92,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  
 ```yaml 
  {
- "username": "Alfredo",
+ "username": "Alfonso",
  "password": "1234"
  }
 ```
@@ -103,7 +103,7 @@ Esto descargará la base de datos y la aplicación ya construida.
  
  ```yaml
  {
- "username": "Alfredo",
+ "username": "Alfonso",
  "password": "1234"
  }
  ```
