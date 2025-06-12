@@ -18,7 +18,6 @@ public class JwtFilter extends OncePerRequestFilter {
     private final JwtUtil jwtUtil;
     private final UsuarioService usuarioService;
 
-    // ✅ Inyección por constructor
     public JwtFilter(JwtUtil jwtUtil, UsuarioService usuarioService) {
         this.jwtUtil = jwtUtil;
         this.usuarioService = usuarioService;
@@ -28,6 +27,7 @@ public class JwtFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
+
         String authHeader = request.getHeader("Authorization");
 
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
